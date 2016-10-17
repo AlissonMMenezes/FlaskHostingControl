@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block content %}
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="page-header">New Package</h2>
+			</div>
+		</div><!--/.row-->
+
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Form Elements</div>
+					<div class="panel-body">
+						<div class="col-md-6">
+							<form role="form">
+								<div class="form-group">
+									<label>Package Name</label>
+									<input class="form-control" placeholder="Placeholder">
+								</div>
+								<div class="form-group">
+									<label>Web Template</label>
+									<select class="form-control">
+										<option>default</option
+									</select>
+								</div>
+								<div class="form-group">
+									<label>Proxy Template</label>
+									<select class="form-control">
+										<option>default</option
+									</select>
+								</div>
+								<div class="form-group">
+									<label>DNS Template</label>
+									<select class="form-control">
+										<option>default</option
+									</select>
+								</div>
+								<div class="form-group">
+									<label>SSH Access</label>
+									<select class="form-control">
+										<option>default</option
+									</select>
+								</div>
+								<div class="form-group">
+									<label>Web Domains</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>Web Aliases</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>DNS Domains</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>DNS Records</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>Mail Domains</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>Mail Accounts</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>Databases</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>Cron Jobs</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>Backups</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>Quota</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<label>Bandwidth</label>
+									<input type="number" class="form-control" placeholder="Number">
+								</div>
+								<div class="form-group">
+									<input class="form-control" placeholder="Placeholder">
+									<input class="form-control" placeholder="Placeholder">
+								</div>
+								<div class="form-group">
+									<input type="submit" class="btn btn-success" value="Save" />
+									<input type="submit" class="btn btn-default" value="Back" />
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div><!-- /.col-->
+		</div><!-- /.row -->
+
+	</div><!--/.main-->
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script>
+		!function ($) {
+			$(document).on("click","ul.nav li.parent > a > span.icon", function(){
+				$(this).find('em:first').toggleClass("glyphicon-minus");
+			});
+			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>
+{% endblock %}

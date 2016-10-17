@@ -1,9 +1,14 @@
 from flask import Flask, render_template
 from flask_migrate import Migrate,MigrateCommand, Manager
+from blueprints.Users import users
+from blueprints.Packages import packages
 from db import db
 from commons.security_config import security, user_datastore
 
 app = Flask(__name__)
+app.register_blueprint(users)
+app.register_blueprint(packages)
+
 app.config.from_object('instance.config.DevelopmentConfig')
 
 db.init_app(app)

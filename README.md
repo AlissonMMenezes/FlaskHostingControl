@@ -22,7 +22,9 @@ To install you can follow these steps:
 
 > pip install -r requirements.txt
 
+> npm install bower
 
+> bower install
 
 Contacts:
 

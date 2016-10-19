@@ -1,12 +1,14 @@
 from flask import Flask, render_template
 from blueprints.Users import users
 from blueprints.Packages import packages
+from blueprints.Account import account
 from commons.security_config import security, user_datastore
 from db import db
 
 app = Flask(__name__)
 app.register_blueprint(users)
 app.register_blueprint(packages)
+app.register_blueprint(account)
 
 app.config.from_object('instance.config.DevelopmentConfig')
 
@@ -15,10 +17,6 @@ security.init_app(app, user_datastore)
 @app.route("/")
 def index():
     return render_template("index.html")
-
-@app.route("/login")
-def login():
-    return render_template("login.html")
 
 @app.route("/customer/new")
 def new_customer():

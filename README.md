@@ -13,10 +13,11 @@ That system has the following features:
 * cron jobs
 * backups
 
-To install you can follow these steps:
-* install dependencies
+The recommended operating system is Ubuntu 16.
 
-> apt-get install python python-dev python-pip python-psycopg2
+To install you can follow these steps:
+
+> apt-get install python python-dev python-pip python-psycopg2 apache2 libapache2-mod-wsgi libapache2-mod-php5 php
 
 > git clone https://github.com/AlissonMMenezes/FlaskHostingControl
 

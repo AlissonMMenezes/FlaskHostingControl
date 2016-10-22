@@ -16,13 +16,12 @@ class Role(db.Model, RoleMixin):
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String,nullable=False)
     email = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255),nullable=False)
     active = db.Column(db.Boolean())
     confirmed_at = db.Column(db.DateTime())
-    package = db.Column(db.Integer,db.ForeignKey('packages.id'),nullable=False)
-    language = db.Column(db.String,nullable=False)
+    package = db.Column(db.Integer,db.ForeignKey('packages.id'),nullable=True)
+    language = db.Column(db.String,nullable=True)
     first_name = db.Column(db.String,nullable=False)
     last_name = db.Column(db.String,nullable=False)
     roles = db.relationship('Role', secondary=roles_users,

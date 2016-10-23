@@ -3,6 +3,8 @@ class Config(object):
     TESTING = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///tmp/flask_hc.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECURITY_REGISTERABLE = True
+    SECURITY_SEND_REGISTER_EMAIL = False
 
 class ProductionConfig(Config):
     DATABASE_URI = ''

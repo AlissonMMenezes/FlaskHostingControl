@@ -5,6 +5,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECURITY_REGISTERABLE = True
     SECURITY_SEND_REGISTER_EMAIL = False
+    SECURITY_RECOVERABLE = True
 
 class ProductionConfig(Config):
     DATABASE_URI = ''

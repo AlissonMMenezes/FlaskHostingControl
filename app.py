@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from blueprints.Users import users
 from blueprints.Packages import packages
 from blueprints.Account import account
+from blueprints.Admin import admin
 from commons.security_config import security, user_datastore, login_required
 from blueprints.security.ExtendedRegisterForm import ExtendedRegisterForm
 from db import db
@@ -11,6 +12,7 @@ app = Flask(__name__)
 app.register_blueprint(users)
 app.register_blueprint(packages)
 app.register_blueprint(account)
+app.register_blueprint(admin)
 app.secret_key = "super secret key"
 
 app.config.from_object('instance.config.DevelopmentConfig')

@@ -1,18 +1,14 @@
-{% extends "base.html" %}
+{% extends "admin/base.admin.html" %}
 {% block content %}
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default chat">
+            <div class="panel panel-default chat-panel">
                 <div class="panel-heading" id="accordion">
-                    <svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg><a href="/packages/new">New Package</a>
-                    <form class="pull-right" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                    </form>
+                    <i class="fa fa-user"><a href="/packages/new"> New Package</a></i>
+
 
                     <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sorty by <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -22,98 +18,11 @@
                         </ul>
                     </div>
 
+
                 </div>
                 <div class="panel-body">
-                    <ul>
-                        <li>
-                            <div class="chat-body">
-                                <div class="header">
-                                    <strong class="primary-font">default</strong>
-                                    <small class="text-muted">15/10/2016</small>
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Actions <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Edit</a></li>
-                                            <li><a href="#">Login as</a></li>
-                                            <li><a href="#">Suspend</a></li>
-                                            <li><a href="#">Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="">Bandwidth: 1/5</div>
-                                        <div class="text-muted">Disk: 1/5</div>
-                                        <div class="text-muted">Web: 1/5</div>
-                                        <div class="text-muted">Mail: 1/5</div>
-                                        <div class="text-muted">Databases: 0/1</div>
-                                        <div class="text-muted">User Directories: 2/1</div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="">Web Domains: 1/5</div>
-                                        <div class="text-muted">DNS Domains: 1/5</div>
-                                        <div class="text-muted">Mail Domains: 1/5</div>
-                                        <div class="text-muted">Database: 1/5</div>
-                                        <div class="text-muted">Cron Jobs: 0/1</div>
-                                        <div class="text-muted">Backups: 2/1</div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="">Email: alisson.machado@responsus.com.br</div>
-                                        <div class="text-muted">Package: Básico</div>
-                                        <div class="text-muted">SSH Access: bash</div>
-                                        <div class="text-muted">IP Address: 0</div>
-                                        <div class="text-muted">Nameservers: ns1.responsus.com.br<br/>ns2.responsus.com.br</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="chat-body">
-                                <div class="header">
-                                    <strong class="primary-font">Basico</strong>
-                                    <small class="text-muted">15/10/2016</small>
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Actions <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Edit</a></li>
-                                            <li><a href="#">Login as</a></li>
-                                            <li><a href="#">Suspend</a></li>
-                                            <li><a href="#">Delete</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="">Bandwidth: 1/5</div>
-                                        <div class="text-muted">Disk: 1/5</div>
-                                        <div class="text-muted">Web: 1/5</div>
-                                        <div class="text-muted">Mail: 1/5</div>
-                                        <div class="text-muted">Databases: 0/1</div>
-                                        <div class="text-muted">User Directories: 2/1</div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="">Web Domains: 1/5</div>
-                                        <div class="text-muted">DNS Domains: 1/5</div>
-                                        <div class="text-muted">Mail Domains: 1/5</div>
-                                        <div class="text-muted">Database: 1/5</div>
-                                        <div class="text-muted">Cron Jobs: 0/1</div>
-                                        <div class="text-muted">Backups: 2/1</div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="">Email: alisson.machado@responsus.com.br</div>
-                                        <div class="text-muted">Package: Básico</div>
-                                        <div class="text-muted">SSH Access: bash</div>
-                                        <div class="text-muted">IP Address: 0</div>
-                                        <div class="text-muted">Nameservers: ns1.responsus.com.br<br/>ns2.responsus.com.br</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
+                    <ul class="chat">
+                        <li class="left clearfix">
                             <div class="chat-body">
                                 <div class="header">
                                     <strong class="primary-font">alisson</strong>
@@ -157,7 +66,51 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
+                        <li class="left clearfix">
+                            <div class="chat-body">
+                                <div class="header">
+                                    <strong class="primary-font">alisson</strong>
+                                    <small class="text-muted">15/10/2016</small>
+                                    <div class="btn-group pull-right">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Actions <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Login as</a></li>
+                                            <li><a href="#">Suspend</a></li>
+                                            <li><a href="#">Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="">Bandwidth: 1/5</div>
+                                        <div class="text-muted">Disk: 1/5</div>
+                                        <div class="text-muted">Web: 1/5</div>
+                                        <div class="text-muted">Mail: 1/5</div>
+                                        <div class="text-muted">Databases: 0/1</div>
+                                        <div class="text-muted">User Directories: 2/1</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="">Web Domains: 1/5</div>
+                                        <div class="text-muted">DNS Domains: 1/5</div>
+                                        <div class="text-muted">Mail Domains: 1/5</div>
+                                        <div class="text-muted">Database: 1/5</div>
+                                        <div class="text-muted">Cron Jobs: 0/1</div>
+                                        <div class="text-muted">Backups: 2/1</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="">Email: alisson.machado@responsus.com.br</div>
+                                        <div class="text-muted">Package: Básico</div>
+                                        <div class="text-muted">SSH Access: bash</div>
+                                        <div class="text-muted">IP Address: 0</div>
+                                        <div class="text-muted">Nameservers: ns1.responsus.com.br<br/>ns2.responsus.com.br</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="left clearfix">
                             <div class="chat-body">
                                 <div class="header">
                                     <strong class="primary-font">alisson</strong>

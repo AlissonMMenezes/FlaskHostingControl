@@ -27,6 +27,8 @@ To install you can follow these steps:
 
 > bower install
 
+> python app.py
+
 Contacts:
 
 alisson.machado@responsus.com.br / DevOps

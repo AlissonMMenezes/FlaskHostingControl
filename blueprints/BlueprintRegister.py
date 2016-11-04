@@ -13,18 +13,11 @@ class BlueprintRegister:
 
         for file in files_to_import:
             try:
-                if os.path.isfile("{}\\{}.pyc".format(base_path, file)):
-                    module = imp.load_compiled(file, "{}\\{}.pyc".format(base_path, file))                
-                    blueprint_load = getattr(module, file.lower())
-                    app_context.register_blueprint(blueprint_load)
-
-                elif os.path.isfile("{}\\{}.py".format(base_path, file)):
+                if os.path.isfile("{}\\{}.py".format(base_path, file)):
                     module = imp.load_source(file, "{}\\{}.py".format(base_path, file))
                     blueprint_load = getattr(module, file.lower())
                     app_context.register_blueprint(blueprint_load)
-                    print my_module  
+                               
             except Exception as e:
-                print e
-
-        print files_to_import
+                print e        
                  

@@ -3,7 +3,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.security import Security, SQLAlchemyUserDatastore, \
     UserMixin, RoleMixin, login_required
 from db import db
-from models.FHCModel import Packages
+from models.FHCModel import ActivePackage
 
 roles_users = db.Table('roles_users',
         db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
@@ -20,7 +20,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255),nullable=False)
     active = db.Column(db.Boolean())
     confirmed_at = db.Column(db.DateTime())
-    package = db.Column(db.Integer,db.ForeignKey('packages.id'),nullable=True)
+    package = db.Column(db.Integer,db.ForeignKey('active_package.id'),nullable=True)
     language = db.Column(db.String,nullable=True)
     first_name = db.Column(db.String,nullable=False)
     last_name = db.Column(db.String,nullable=False)

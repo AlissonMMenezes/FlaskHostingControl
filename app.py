@@ -1,8 +1,4 @@
 from flask import Flask, render_template
-from blueprints.Users import users
-from blueprints.Packages import packages
-from blueprints.Account import account
-from blueprints.Admin import admin
 from commons.security_config import security, user_datastore, login_required
 from blueprints.security.ExtendedRegisterForm import ExtendedRegisterForm
 from blueprints.BlueprintRegister import BlueprintRegister

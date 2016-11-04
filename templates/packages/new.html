@@ -2,7 +2,7 @@
 {% block content %}
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="page-header">New Package</h2>
+				<h2 class="page-header">New Package Template</h2>
 			</div>
 		</div><!--/.row-->
 
@@ -10,40 +10,26 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Form Elements</div>
+					<div class="panel-heading">Create template</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form">
+							<form role="form" action="/packages/new" method="POST">
 								<div class="form-group">
 									<label>Package Name</label>
-									<input class="form-control" placeholder="Package name">
-								</div>
-								<div class="form-group">
-									<label>Web Template</label>
-									<select class="form-control">
-										<option>default</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label>Proxy Template</label>
-									<select class="form-control">
-										<option>default</option>
-										<option>nginx</option>
-										<option>default</option>
-									</select>
-								</div>
+									<input class="form-control" placeholder="Package name" name="name">
+								</div>								
 								<div class="form-group">
 									<label>DNS Template</label>
-									<select class="form-control">
+									<select class="form-control" name="dns_template">
 										<option>default</option>
 									</select>
 								</div>
 								<div class="form-group">
 									<label>SSH Access</label>
-									<select class="form-control">
-										<option>bash</option>
-										<option>sh</option>
-										<option>nologin</option>
+									<select class="form-control" name="bash">
+										<option value="bash">bash</option>
+										<option value="sh">sh</option>
+										<option value="nologin">nologin</option>
 									</select>
 								</div>
 								<div class="form-group">
@@ -54,53 +40,48 @@
 								<div class="col-lg-6">
 									<div class="form-group">
 										<label>Web Domains</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="web_domains">
 									</div>
 									<div class="form-group">
 										<label>Web Aliases</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="web_aliases">
 									</div>
 									<div class="form-group">
 										<label>DNS Domains</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="dns_domains">
 									</div>
 									<div class="form-group">
 										<label>DNS Records</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="dns_records">
 									</div>
 									<div class="form-group">
 										<label>Mail Domains</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="mail_domains">
 									</div>
 									<div class="form-group">
 										<label>Mail Accounts</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="mail_accounts">
 									</div>
 									<div class="form-group">
 										<label>Databases</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="databases">
 									</div>
 									<div class="form-group">
 										<label>Cron Jobs</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="cron_jobs">
 									</div>
 									<div class="form-group">
 										<label>Backups</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="backups">
 									</div>
 									<div class="form-group">
 										<label>Quota</label>
-										<input type="number" class="form-control" placeholder="10">
+										<input type="number" class="form-control" placeholder="10" name="quota">
 									</div>
 									<div class="form-group">
 										<label>Bandwidth</label>
-										<input type="number" class="form-control" placeholder="10">
-									</div>
-									<div class="form-group">
-										<label>Nameservers</label>
-										<input class="form-control" placeholder="ns1.responsus.com.br">
-										<input class="form-control" placeholder="ns2.responsus.com.br">
-									</div>
+										<input type="number" class="form-control" placeholder="10" name="bandwidth">
+									</div>									
 								</div>
 							</div>
 						</div>

@@ -21,5 +21,8 @@ class Packages(db.Model):
     nameservers = db.Column(db.String,nullable=False)
     user = db.relationship("User")
 
+class PackagesRecipe(db.Model):
+    pass
+
 if __name__ == "__main__":
     manager.run()

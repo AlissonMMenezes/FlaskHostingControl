@@ -19,6 +19,7 @@ app.config.from_object('instance.config.DevelopmentConfig')
 security.init_app(app, user_datastore, register_form=ExtendedRegisterForm)
 
 @app.route("/")
+@login_required
 def index():
     return render_template("index.html")
 

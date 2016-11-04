@@ -9,4 +9,4 @@ admin = Blueprint("admin", __name__, url_prefix="/admin")
 
 @admin.route("/")
 def index():
-    return render_template("admin/index.html")
+    return render_template("panel/index.html")

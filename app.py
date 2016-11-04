@@ -5,15 +5,14 @@ from blueprints.Account import account
 from blueprints.Admin import admin
 from commons.security_config import security, user_datastore, login_required
 from blueprints.security.ExtendedRegisterForm import ExtendedRegisterForm
+from blueprints.BlueprintRegister import BlueprintRegister
 from db import db
 
 app = Flask(__name__)
-
-app.register_blueprint(users)
-app.register_blueprint(packages)
-app.register_blueprint(account)
-app.register_blueprint(admin)
 app.secret_key = "super secret key"
+
+register = BlueprintRegister()
+register.init_app(app, ['.gitignore', 'BlueprintRegister', '__init__', 'security'])
 
 app.config.from_object('instance.config.DevelopmentConfig')
 

@@ -2,11 +2,11 @@ from flask import Flask, render_template
 from commons.security_config import security, user_datastore, login_required
 from blueprints.security.ExtendedRegisterForm import ExtendedRegisterForm
 from blueprints.BlueprintRegister import BlueprintRegister
+from blueprints.Packages import packages
 from db import db
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
-
 register = BlueprintRegister()
 register.init_app(app, ['.gitignore', 'BlueprintRegister', '__init__', 'security'])
 
@@ -25,5 +25,7 @@ def new_customer():
     return render_template("new_customer.html")
 
 if __name__ == "__main__":
-    db.create_all()
-    app.run(host="0.0.0.0",debug=True,port=8000)
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
+        app.run(host="0.0.0.0",debug=True,port=8000)

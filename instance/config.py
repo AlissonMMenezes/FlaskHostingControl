@@ -1,7 +1,7 @@
 class Config(object):
     DEBUG = False
     TESTING = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///tmp/flask_hc.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///flask_hc.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECURITY_REGISTERABLE = True
     SECURITY_SEND_REGISTER_EMAIL = False

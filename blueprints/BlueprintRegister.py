@@ -7,11 +7,12 @@ class BlueprintRegister:
 
     def init_app(self, app_context, file_to_ignore):
         base_path = os.path.dirname(__file__)
-        mask_fle_path = "{}\\{}.py"
+        mask_fle_path = "{}//{}.py"
+        print base_path
         files_to_import = [re.sub('.pyc|.py','',file) for file in os.listdir(base_path)]
         files_counter = Counter(files_to_import)
         files_to_import = [f for f in files_counter if f not in file_to_ignore]
-
+        print files_to_import
         for file in files_to_import:
             try:
                 if os.path.isfile(mask_fle_path.format(base_path, file)):

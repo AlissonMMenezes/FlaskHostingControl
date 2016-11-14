@@ -38,6 +38,7 @@ class Package(db.Model):
     backups = db.Column(db.Integer,nullable=False)
     quota = db.Column(db.Integer,nullable=False)
     bandwidth = db.Column(db.Integer,nullable=False)
+
     
 if __name__ == "__main__":
     manager.run()

@@ -27,4 +27,12 @@ def add_user():
     except Exception as e:
         db.session.rollback()
         return render_template("users/new.html",message="Failed to save new user: %s"%e)
+
+@users.route("/users/<int:id>/")
+def user(id):    
+    user = UserModel.query.filter_by(id=id).first_or_404()
+    print user.package
+    packages = PackageModel.query.all()
+    return render_template("users/show.html", user=user,packages=packages)
+    
             

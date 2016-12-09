@@ -18,9 +18,10 @@ class ActivePackage(db.Model):
     backups = db.Column(db.Integer,nullable=False)
     bandwidth = db.Column(db.Integer,nullable=False)
     nameservers = db.Column(db.String,nullable=False)
-    package_id = db.Column(db.Integer,db.ForeignKey('package.id'),nullable=True)
+    user_id = db.Column(db.Integer(), db.ForeignKey('user.id'), nullable=False)
+    package_id = db.Column(db.Integer,db.ForeignKey('package.id'),nullable=True)    
     package = db.relationship("Package")
-    user = db.relationship("User")
+     
 
 class Package(db.Model):
     id = db.Column(db.Integer, primary_key=True)

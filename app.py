@@ -16,12 +16,6 @@ app.config.from_object('instance.config.DevelopmentConfig')
 
 security.init_app(app, user_datastore, register_form=ExtendedRegisterForm)
 
-@app.route("/")
-@login_required
-def index():
-    users = UserModel.query.all()
-    return render_template("index.html",users=users)
-
 @app.route("/customer/new")
 @login_required
 def new_customer():

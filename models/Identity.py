@@ -19,10 +19,10 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255),nullable=False)
     active = db.Column(db.Boolean())
-    confirmed_at = db.Column(db.DateTime())
-    package = db.Column(db.Integer,db.ForeignKey('active_package.id'),nullable=True)
+    confirmed_at = db.Column(db.DateTime())    
+    active_package = db.relationship("ActivePackage")
     language = db.Column(db.String,nullable=True)
     first_name = db.Column(db.String,nullable=False)
-    last_name = db.Column(db.String,nullable=False)
+    last_name = db.Column(db.String,nullable=False)    
     roles = db.relationship('Role', secondary=roles_users,
                             backref=db.backref('users', lazy='dynamic'))
